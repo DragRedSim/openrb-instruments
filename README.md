@@ -1,12 +1,14 @@
 # OPENRB-INSTRUMENTS [![Discord Badge](https://img.shields.io/discord/1082846907111587911?label=discord&logo=discord)](https://discord.gg/BygTtZUZmK) 
 
-an arduino leonardo based midi pro adapter, emulating a PDP legacy adapter and presenting itself as pro drums, very close in functionality to the [Roll Limitless](https://rolllimitless.com/) but open source. 
+An Arduino Leonardo-based device emulating the Mad Catz Wireless Adapter, allowing connection of seventh-generation instruments to the Xbox One/Xbox Series consoles for use in Rock Band 4.
+
+This is a fork of the original repository, which is focused on emulating a MIDI Pro Adapter and PDP adapter combo. If that is what you're trying to achieve, head to the [upstream repo](https://github.com/delabrcd/openrb-instruments)
 
 # Table of Contents
 - [OPENRB-INSTRUMENTS ](#openrb-instruments-)
 - [Table of Contents](#table-of-contents)
 - [Parts](#parts)
-  - [Necassary Parts](#necassary-parts)
+  - [Necessary Parts](#necessary-parts)
   - [Optional Parts](#optional-parts)
   - [Optional (Debugging) Tools](#optional-debugging-tools)
 - [Assembly](#assembly)
@@ -22,18 +24,20 @@ an arduino leonardo based midi pro adapter, emulating a PDP legacy adapter and p
 - [Support Me](#support-me)
 
 # Parts
-## Necassary Parts 
+## Necessary Parts 
 - [Arduino Leonardo](https://store.arduino.cc/products/arduino-leonardo-with-headers) or any clone & micro-usb -> usb a cable
 - [USB Host Shield](https://www.aliexpress.us/item/3256805054675231.html?spm=a2g0o.productlist.main.71.410634f7EOVIeG&algo_pvid=ac99536d-85a8-46b0-94af-9538ab88b9a7&algo_exp_id=ac99536d-85a8-46b0-94af-9538ab88b9a7-35&pdp_ext_f=%7B%22sku_id%22%3A%2212000032330281734%22%7D&pdp_npi=3%40dis%21USD%2115.27%2114.35%21%21%21%21%21%40211bf2da16781320629492357d070e%2112000032330281734%21sea%21US%21821067191&curPageLogUid=P49Bow2d3Lud) [^1]
-
+- - I may look into designing a newer host shield board, which will hopefully add in an on-board hub. No guarantees.
 - XBOX One Controller & coresponding USB-x -> USB-A Cable (newer series ones use USB-C, XBONE controllers use micro) [^3]
 
 ## Optional Parts
 - If using Serial MIDI (recommended): [any arduino midi shield](https://www.aliexpress.us/item/3256803015940184.html?spm=a2g0o.productlist.main.1.781c7e6ar9DaP8&algo_pvid=2f368073-2f0d-4f9c-815a-b900c00a6dae&algo_exp_id=2f368073-2f0d-4f9c-815a-b900c00a6dae-0&pdp_ext_f=%7B%22sku_id%22%3A%2212000024638075909%22%7D&pdp_npi=3%40dis%21USD%2110.01%216.41%21%21%21%21%21%402102160416781384373844470d06f3%2112000024638075909%21sea%21US%21821067191&curPageLogUid=Q3ucbOkF7JJK) [^2] 
 - If using USB MIDI: Powered USB A Hub, your setup may work without it being powered depending on how much your midi device draws
+- I am using an LCD Keypad Shield to add a 16x2 display and five on-board buttons for development purposes; this may become a requirement.
  
 ## Optional (Debugging) Tools  
 - TTL Serial Adapter - there's a debug stream on serial1 at 115200 baud (recommeneded if you plan to contribute to development)
+- - If I do create a newer board, I may also implement the serial interface into it dependent on physical space.
 
 # Assembly 
 ## Physical Assembly
